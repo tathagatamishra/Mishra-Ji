@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tathagata Mishra - Full Stack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #ff0080, #00ffff);
+            border-radius: 4px;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="%23ff0080" opacity="0.8"/><circle cx="10" cy="10" r="3" fill="%2300ffff"/></svg>'), auto;
+        }
+
+        /* Animated Background */
+        .bg-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #0a0a0a 0%, #4a0e4e 25%, #1a1a2e 50%, #16213e 75%, #0a0a0a 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            background-image:
+                linear-gradient(rgba(0, 255, 255, 0.3) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 0, 128, 0.3) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(50px, 50px);
+            }
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #00ffff;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            box-shadow: 0 0 10px #00ffff;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 0.5;
+            }
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.8);
+            border-bottom: 2px solid rgba(255, 0, 128, 0.5);
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 24px;
+            font-weight: 900;
+            background: linear-gradient(45deg, #ff0080, #00ffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: #ff0080;
+            text-shadow: 0 0 10px #ff0080;
+        }
+
+        /* Main Content */
+        main {
+            padding-top: 100px;
+        }
+
+        .section {
+            min-height: 100vh;
+            padding: 80px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', monospace;
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ff0080, #00ffff, #ff0080);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textShine 3s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(255, 0, 128, 0.8);
+        }
+
+        @keyframes textShine {
+
+            0%,
+            100% {
+                background-position: 0% center;
+            }
+
+            50% {
+                background-position: 200% center;
+            }
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            color: #00ffff;
+            margin-bottom: 30px;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .neon-btn {
+            padding: 15px 30px;
+            background: transparent;
+            border: 2px solid #ff0080;
+            color: #ff0080;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .neon-btn:hover {
+            color: #000;
+            background: #ff0080;
+            box-shadow: 0 0 30px #ff0080, inset 0 0 30px rgba(255, 0, 128, 0.2);
+        }
+
+        .neon-btn.secondary {
+            border-color: #00ffff;
+            color: #00ffff;
+        }
+
+        .neon-btn.secondary:hover {
+            background: #00ffff;
+            box-shadow: 0 0 30px #00ffff, inset 0 0 30px rgba(0, 255, 255, 0.2);
+        }
+
+        /* About Section */
+        .about {
+            background: rgba(255, 0, 128, 0.05);
+        }
+
+        .about-content {
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: 'Orbitron', monospace;
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: #ff0080;
+            text-shadow: 0 0 20px rgba(255, 0, 128, 0.6);
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #ddd;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-item {
+            background: rgba(0, 255, 255, 0.1);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .skill-item:hover {
+            background: rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .skill-item i {
+            font-size: 2rem;
+            color: #00ffff;
+            margin-bottom: 10px;
+        }
+
+        /* Projects Section */
+        .projects {
+            background: rgba(0, 255, 255, 0.05);
+        }
+
+        .projects-content {
+            max-width: 1400px;
+            width: 100%;
+        }
+
+        .projects h2 {
+            font-family: 'Orbitron', monospace;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 60px;
+            color: #00ffff;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+
+        .project-card {
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 0, 128, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 0, 128, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .project-card:hover::before {
+            left: 100%;
+        }
+
+        .project-card:hover {
+            border-color: #ff0080;
+            box-shadow: 0 0 30px rgba(255, 0, 128, 0.3);
+            transform: translateY(-10px);
+        }
+
+        .project-card h3 {
+            color: #ff0080;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-family: 'Orbitron', monospace;
+        }
+
+        .project-card p {
+            color: #ddd;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            background: rgba(0, 255, 255, 0.2);
+            color: #00ffff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(0, 255, 255, 0.4);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .project-links a {
+            color: #00ffff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .project-links a:hover {
+            color: #ff0080;
+            text-shadow: 0 0 10px #ff0080;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: rgba(255, 0, 128, 0.05);
+        }
+
+        .contact-content {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-family: 'Orbitron', monospace;
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: #ff0080;
+            text-shadow: 0 0 20px rgba(255, 0, 128, 0.6);
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #ddd;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #00ffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: #ff0080;
+            text-shadow: 0 0 10px #ff0080;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            border-top: 2px solid rgba(255, 0, 128, 0.5);
+            padding: 30px 50px;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: #00ffff;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #ff0080;
+            text-shadow: 0 0 15px #ff0080;
+            transform: scale(1.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .section {
+                padding: 60px 20px;
+            }
+
+            header {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card {
+                padding: 20px;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-container"></div>
+    <div class="grid-overlay"></div>
+    <div class="particles"></div>
+
+    <header>
+        <nav>
+            <div class="logo">T.MISHRA</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="section hero">
+            <div>
+                <h1>TATHAGATA MISHRA</h1>
+                <h2>Full Stack Web Developer</h2>
+                <p>Creative developer with expertise in MERN stack, 3D Web technologies, and multimedia content
+                    creation. Passionate about leveraging cutting-edge technology to build innovative and user-friendly
+                    web applications that push the boundaries of what's possible.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="neon-btn">View Projects</a>
+                    <a href="#contact" class="neon-btn secondary">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>ABOUT ME</h2>
+                    <p>I'm a passionate Full Stack Developer with expertise in the MERN stack and 3D web technologies.
+                        Currently expanding my skills into Unreal Engine and game development while working at Qviq to
+                        simplify online presence and networking.</p>
+                    <p>My journey combines technical excellence with creative vision, from building robust backend
+                        systems to creating engaging 3D experiences. I believe in pushing the boundaries of web
+                        development to create truly immersive digital experiences.</p>
+                    <p>When I'm not coding, you'll find me creating VFX content and 3D models, constantly exploring new
+                        ways to blend technology with creativity.</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fab fa-react"></i>
+                        <p>React.js</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-node-js"></i>
+                        <p>Node.js</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-database"></i>
+                        <p>MongoDB</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-js-square"></i>
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-cube"></i>
+                        <p>Three.js</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-aws"></i>
+                        <p>AWS</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-python"></i>
+                        <p>Python</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-gamepad"></i>
+                        <p>Unreal Engine</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section projects">
+            <div class="projects-content">
+                <h2>FEATURED PROJECTS</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Corporate Law Firm Website</h3>
+                        <p>Professional website for Dikshant Malhotra & Associates featuring a responsive design with
+                            custom admin panel for content management. Built with modern web technologies for optimal
+                            performance.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">AWS</span>
+                            <span class="tech-tag">JWT</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://dmassociates.in" target="_blank"><i class="fas fa-external-link-alt"></i>
+                                Live Demo</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Planet (3D Website)</h3>
+                        <p>Interactive 3D space exploration website using Three.js and WebGL. Features smooth animations
+                            and immersive transitions for an engaging user experience in a cosmic environment.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">Three.js</span>
+                            <span class="tech-tag">WebGL</span>
+                            <span class="tech-tag">GSAP</span>
+                            <span class="tech-tag">CSS3</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://planet3d.vercel.app" target="_blank"><i
+                                    class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/tathagatamishra/PLANET" target="_blank"><i
+                                    class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Task Management App</h3>
+                        <p>Full-stack application for task management with user authentication, intuitive interface for
+                            adding, deleting, and marking tasks as complete. Built with modern MERN stack architecture.
+                        </p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">SCSS</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://what2do.vercel.app" target="_blank"><i
+                                    class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/tathagatamishra/ToDoApp" target="_blank"><i
+                                    class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>QR Code Generator</h3>
+                        <p>React-based application for generating customizable QR codes with features for color
+                            customization, logo insertion, and pattern selection. Clean, modern interface with real-time
+                            preview.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">SCSS</span>
+                            <span class="tech-tag">Canvas API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://quickieqr.vercel.app" target="_blank"><i
+                                    class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/tathagatamishra/QuickieQR" target="_blank"><i
+                                    class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Shubukan India</h3>
+                        <p>Full-stack website for a Karate organization built with MERN stack. Features member
+                            management, event scheduling, and dynamic content display with modern responsive design.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Spline</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://shubukanindia.org" target="_blank"><i class="fas fa-external-link-alt"></i>
+                                Live Demo</a>
+                            <a href="https://github.com/tathagatamishra/shubukanindia" target="_blank"><i
+                                    class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Commentron</h3>
+                        <p>Retro-styled comment system with synthwave aesthetics. Features real-time comment posting,
+                            local storage persistence, and animated UI elements with a nostalgic 80s vibe.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Local Storage</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/tathagatamishra/CuvetteProjects/tree/main/Commentron"
+                                target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="contact-content">
+                <h2>LET'S CONNECT</h2>
+                <p>Ready to bring your ideas to life? Let's collaborate and create something amazing together. Whether
+                    it's a web application, 3D experience, or something entirely new - I'm here to help.</p>
+                <div class="contact-links">
+                    <a href="mailto:tathagatamishra007@gmail.com" class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>tathagatamishra007@gmail.com</span>
+                    </a>
+                    <a href="tel:+917602728880" class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 7602728880</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/tathagatamishra" target="_blank" class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn Profile</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/tathagatamishra" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/tathagatamishra" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://youtube.com/@vfxinvein" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com/chaoticrealm3d" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://sketchfab.com/tathagatamishra" target="_blank"><i class="fas fa-cube"></i></a>
+        </div>
+        <p>&copy; 2025 Tathagata Mishra. All rights reserved. | Built with 💜 and synthwave vibes</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Generate floating particles
+        function createParticles() {
+            const particleContainer = document.querySelector('.particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                // Random position
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+
+                // Random animation delay and duration
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+
+                // Random size
+                const size = Math.random() * 3 + 1;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+
+                // Random color (cyan or magenta)
+                const colors = ['#00ffff', '#ff0080', '#ffffff'];
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.boxShadow = `0 0 10px ${particle.style.background}`;
+
+                particleContainer.appendChild(particle);
+            }
+        }
+
+        // Navbar active state
+        function updateActiveNav() {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.color = '#fff';
+                link.style.textShadow = 'none';
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.color = '#ff0080';
+                    link.style.textShadow = '0 0 10px #ff0080';
+                }
+            });
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionOb
+    </script>
+</body>
+
+</html>

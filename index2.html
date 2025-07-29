@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tathagata Mishra | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #ff2d95;
+      --blue: #00f0ff;
+      --purple: #7000ff;
+      --yellow: #ffe600;
+      --font-main: 'Orbitron', sans-serif;
+      --font-retro: 'Press Start 2P', cursive;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at center, #0f001e 0%, #09001a 100%);
+      color: #fff;
+      font-family: var(--font-main);
+      overflow-x: hidden;
+    }
+
+    .stars, .grid {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .stars {
+      background: repeating-radial-gradient(#fff3 1px, transparent 2px);
+      animation: moveStars 60s linear infinite;
+    }
+
+    .grid {
+      bottom: 0;
+      background-image:
+        linear-gradient(#00f0ff44 1px, transparent 1px),
+        linear-gradient(to right, #00f0ff44 1px, transparent 1px);
+      background-size: 40px 40px;
+      transform: perspective(600px) rotateX(75deg);
+      opacity: 0.3;
+    }
+
+    @keyframes moveStars {
+      0% { background-position: 0 0; }
+      100% { background-position: -1000px 1000px; }
+    }
+
+    header {
+      text-align: center;
+      padding: 100px 20px 60px;
+      z-index: 2;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      text-shadow: 0 0 10px var(--pink), 0 0 20px var(--blue);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--yellow);
+      text-shadow: 0 0 10px var(--yellow);
+      margin-top: 10px;
+    }
+
+    .sun {
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(to top, #ff0066, #ffa600);
+      border-radius: 50%;
+      margin: 30px auto 0;
+      box-shadow: 0 0 60px #ff007b88;
+      position: relative;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 960px;
+      margin: auto;
+      z-index: 2;
+      position: relative;
+    }
+
+    h2 {
+      font-family: var(--font-retro);
+      font-size: 1.2rem;
+      color: var(--blue);
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 0 0 4px var(--blue);
+    }
+
+    p, li {
+      font-size: 1rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .project {
+      margin: 20px 0;
+    }
+
+    .project a {
+      color: var(--pink);
+      text-decoration: none;
+    }
+
+    .project a:hover {
+      color: var(--yellow);
+    }
+
+    .btn {
+      background: #000;
+      border: 2px solid var(--pink);
+      padding: 10px 20px;
+      color: var(--pink);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 10px;
+      display: inline-block;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--pink);
+      color: #000;
+    }
+
+    .socials {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .socials a {
+      font-size: 24px;
+      margin: 0 10px;
+      color: var(--blue);
+      text-decoration: none;
+    }
+
+    .socials a:hover {
+      color: var(--yellow);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      z-index: 2;
+      position: relative;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="grid"></div>
+
+  <header>
+    <div class="sun"></div>
+    <h1>Tathagata Mishra</h1>
+    <p>Full Stack Developer | 3D Web & Game Enthusiast</p>
+  </header>
+
+  <section>
+    <h2>ABOUT ME</h2>
+    <p>
+      I'm a creative full stack developer skilled in the MERN stack, 3D web, and funky web animations.
+      Currently expanding my skills into Unreal Engine and game development. Passionate about building
+      smooth, stylish, and immersive digital experiences.
+    </p>
+    <p><a class="btn" target="_blank" href="https://drive.google.com/file/d/1uu5crqTDzOiWwbaevrHqCNdRF0Zy742a/view">Download Resume</a></p>
+  </section>
+
+  <section>
+    <h2>SKILLS</h2>
+    <ul>
+      <li>Frontend: React.js, Next.js, HTML5, CSS3, Tailwind, Three.js</li>
+      <li>Backend: Node.js, Express, MongoDB, JWT</li>
+      <li>Other: Python, Blender, AWS EC2, Route 53</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>PROJECTS</h2>
+    <div class="project">
+      <strong>Corporate Law Firm Site</strong><br>
+      <a href="https://dmassociates.in" target="_blank">dmassociates.in</a>
+    </div>
+    <div class="project">
+      <strong>To-Do App</strong><br>
+      <a href="https://what2do.vercel.app" target="_blank">what2do.vercel.app</a> |
+      <a href="https://github.com/tathagatamishra/ToDoApp" target="_blank">GitHub</a>
+    </div>
+    <div class="project">
+      <strong>QR Code Generator</strong><br>
+      <a href="https://quickieqr.vercel.app" target="_blank">quickieqr.vercel.app</a>
+    </div>
+    <div class="project">
+      <strong>Planet 3D Website</strong><br>
+      <a href="https://planet3d.vercel.app" target="_blank">planet3d.vercel.app</a>
+    </div>
+    <div class="project">
+      <strong>Shubukan India Website</strong><br>
+      <a href="https://shubukanindia.org" target="_blank">shubukanindia.org</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>CONTACT</h2>
+    <p>Email: <a href="mailto:tathagatamishra007@gmail.com">tathagatamishra007@gmail.com</a></p>
+    <p>Phone: 7602728880</p>
+    <div class="socials">
+      <a href="https://github.com/tathagatamishra" target="_blank">GitHub</a> |
+      <a href="https://www.linkedin.com/in/tathagatamishra/" target="_blank">LinkedIn</a> |
+      <a href="https://www.youtube.com/@vfxinvein" target="_blank">YouTube</a> |
+      <a href="https://www.instagram.com/chaoticrealm3d/" target="_blank">Instagram</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Tathagata Mishra • Built with 💾, 🔥, and ☄️</p>
+  </footer>
+</body>
+</html>

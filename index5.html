@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tathagata Mishra - Synthwave Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+      color: #00f9ff;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+      color: #ff2cfb;
+      text-shadow: 0 0 5px #fff, 0 0 20px #ff2cfb, 0 0 40px #ff2cfb;
+      text-align: center;
+    }
+
+    .section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .hero {
+      background: url('https://i.ibb.co/wz9C4b2/synthwave-bg.jpg') no-repeat center;
+      background-size: cover;
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: transparent;
+      border: 2px solid #ff2cfb;
+      color: #ff2cfb;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background: #ff2cfb;
+      color: black;
+      box-shadow: 0 0 10px #ff2cfb;
+    }
+
+    .tags span {
+      display: inline-block;
+      border: 1px solid #ff2cfb;
+      padding: 6px 12px;
+      margin: 5px;
+      border-radius: 6px;
+      color: #fff;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid #ff2cfb;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 0 10px #ff2cfb50;
+    }
+
+    .project-links a {
+      margin: 5px;
+      color: #00f9ff;
+      text-decoration: none;
+      border: 1px solid #00f9ff;
+      padding: 6px 12px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .project-links a:hover {
+      background: #00f9ff;
+      color: #000;
+    }
+
+    .timeline-item {
+      border-left: 4px solid #ff2cfb;
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #ff2cfb;
+      font-size: 0.8rem;
+    }
+
+    a {
+      color: #ff2cfb;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <h1>TATHAGATA MISHRA</h1>
+    <h2>Full Stack Web Developer</h2>
+    <a class="btn" href="#projects">View My Work</a>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About Me</h2>
+    <p style="text-align: center;">
+      I am a full stack developer specializing in MERN stack with experience in 3D web technologies and multimedia content creation. Currently expanding into Unreal Engine & Game Dev.
+    </p>
+    <div class="tags" style="text-align: center;">
+      <span>JavaScript</span><span>React</span><span>Node.js</span>
+      <span>Express</span><span>MongoDB</span><span>Three.js</span>
+      <span>Next.js</span><span>AWS</span><span>Tailwind</span>
+      <span>Blender</span><span>Python</span>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <h2>Projects</h2>
+
+    <div class="card">
+      <h3>To-Do Application</h3>
+      <p>Task manager with user auth, built using MERN stack.</p>
+      <div class="project-links">
+        <a href="https://what2do.vercel.app" target="_blank">Live Demo</a>
+        <a href="https://github.com/tathagatamishra/ToDoApp" target="_blank">GitHub</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>QR Code Generator</h3>
+      <p>React app for custom QR generation with styling options.</p>
+      <div class="project-links">
+        <a href="https://quickieqr.vercel.app" target="_blank">Live Demo</a>
+        <a href="https://github.com/tathagatamishra/QuickieQR" target="_blank">GitHub</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Planet (3D Website)</h3>
+      <p>Interactive 3D space web experience using Three.js & GSAP.</p>
+      <div class="project-links">
+        <a href="https://planet3d.vercel.app" target="_blank">Live Demo</a>
+        <a href="https://github.com/tathagatamishra/PLANET" target="_blank">GitHub</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Corporate Law Firm Website</h3>
+      <p>Admin-managed CMS for a corporate advisory firm (DM Associates).</p>
+      <div class="project-links">
+        <a href="https://dmassociates.in" target="_blank">Live Demo</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Shubukan India</h3>
+      <p>MERN site for a national Karate organization.</p>
+      <div class="project-links">
+        <a href="https://shubukanindia.org" target="_blank">Live Demo</a>
+        <a href="https://github.com/tathagatamishra/shubukanindia" target="_blank">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <h2>Experience</h2>
+    <div class="timeline-item">
+      <strong>Full-Stack Web Developer - Qviq</strong><br/>
+      Sep 2023 – Present
+    </div>
+    <div class="timeline-item">
+      <strong>Teaching Assistant - FunctionUp</strong><br/>
+      Nov 2022 – Apr 2023
+    </div>
+  </section>
+
+  <section class="section" id="multimedia">
+    <h2>Multimedia</h2>
+    <p style="text-align: center;">
+      <a href="https://www.youtube.com/@vfxinvein" target="_blank">YouTube (VFX in Vein)</a> | 
+      <a href="https://www.instagram.com/chaoticrealm3d/" target="_blank">Instagram (@chaoticrealm3d)</a> |
+      <a href="https://sketchfab.com/tathagatamishra" target="_blank">Sketchfab Portfolio</a>
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 Tathagata Mishra | <a href="mailto:tathagatamishra007@gmail.com">tathagatamishra007@gmail.com</a> |
+    <a href="https://linkedin.com/in/tathagatamishra" target="_blank">LinkedIn</a> |
+    <a href="https://github.com/tathagatamishra" target="_blank">GitHub</a>
+  </footer>
+
+</body>
+</html>

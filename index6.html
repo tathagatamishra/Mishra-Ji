@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tathagata Mishra | Synthwave Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(160deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Retro Grid Background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255,0,255,0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+      z-index: -1;
+    }
+
+    header {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(90deg, #ff00cc, #3333ff);
+      color: #fff;
+      box-shadow: 0 0 30px #ff00cc;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      color: #ffd6fd;
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #ff66cc;
+      text-shadow: 0 0 5px #ff66cc;
+      margin-bottom: 1rem;
+    }
+
+    ul, li {
+      list-style: none;
+    }
+
+    .contact a, .projects a {
+      color: #00ffff;
+      text-decoration: none;
+    }
+
+    .contact a:hover, .projects a:hover {
+      color: #ff00ff;
+      text-shadow: 0 0 10px #ff00ff;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      margin: 1rem 0;
+      border-left: 5px solid #00ffff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #0ff3;
+    }
+
+    .projects a {
+      display: block;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    @media(max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Tathagata Mishra</h1>
+    <p>Full Stack Developer | MERN | Three.js | Game Dev Enthusiast</p>
+  </header>
+
+  <section class="contact">
+    <h2>📞 Contact</h2>
+    <ul>
+      <li>Email: <a href="mailto:tathagatamishra007@gmail.com">tathagatamishra007@gmail.com</a></li>
+      <li>Phone: 7602728880</li>
+      <li>LinkedIn: <a href="https://linkedin.com/in/tathagatamishra" target="_blank">linkedin.com/in/tathagatamishra</a></li>
+      <li>GitHub: <a href="https://github.com/tathagatamishra" target="_blank">github.com/tathagatamishra</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>👨‍💻 Professional Summary</h2>
+    <div class="card">
+      Creative Full Stack Developer with expertise in MERN stack, 3D Web technologies, and multimedia content creation. Currently expanding into Unreal Engine & Game Dev.
+    </div>
+  </section>
+
+  <section>
+    <h2>🛠 Technical Skills</h2>
+    <div class="card">
+      <strong>Frontend:</strong> React.js, Next.js, HTML, SCSS, Tailwind, Three.js, R3F<br>
+      <strong>Backend:</strong> Node.js, Express, MongoDB, JWT<br>
+      <strong>DevOps:</strong> AWS EC2, Route53, Git<br>
+      <strong>Other:</strong> Blender, WebSockets, Python, UE5 (in progress)
+    </div>
+  </section>
+
+  <section class="projects">
+    <h2>🚀 Projects</h2>
+
+    <div class="card">
+      <strong>🧑‍⚖️ Corporate Law Firm Website</strong><br>
+      Built with Next.js, Express, MongoDB<br>
+      <a href="https://dmassociates.in" target="_blank">Live Site</a>
+    </div>
+
+    <div class="card">
+      <strong>✅ To-Do Application</strong><br>
+      MERN stack + Spline UI<br>
+      <a href="https://what2do.vercel.app" target="_blank">Live</a> | 
+      <a href="https://github.com/tathagatamishra/ToDoApp" target="_blank">Code</a>
+    </div>
+
+    <div class="card">
+      <strong>📱 QR Code Generator</strong><br>
+      Custom styling + QR patterns<br>
+      <a href="https://quickieqr.vercel.app" target="_blank">Live</a> | 
+      <a href="https://github.com/tathagatamishra/QuickieQR" target="_blank">Code</a>
+    </div>
+
+    <div class="card">
+      <strong>🪐 Planet (3D Website)</strong><br>
+      Three.js + GSAP<br>
+      <a href="https://planet3d.vercel.app" target="_blank">Live</a> | 
+      <a href="https://github.com/tathagatamishra/PLANET" target="_blank">Code</a>
+    </div>
+
+    <div class="card">
+      <strong>🥋 Shubukan India</strong><br>
+      Karate org site using MERN<br>
+      <a href="https://shubukanindia.org" target="_blank">Live</a> | 
+      <a href="https://github.com/tathagatamishra/shubukanindia" target="_blank">Code</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>📚 Education</h2>
+    <div class="card">
+      <strong>Manipal University Jaipur</strong> – BCA (2022–2025)<br>
+      <strong>Vidyasagar University</strong> – BMLT (2018–2021)
+    </div>
+  </section>
+
+  <section>
+    <h2>🎨 Multimedia & Social</h2>
+    <div class="card">
+      YouTube: <a href="https://www.youtube.com/@vfxinvein" target="_blank">@vfxinvein</a><br>
+      Instagram: <a href="https://www.instagram.com/chaoticrealm3d/" target="_blank">@chaoticrealm3d</a><br>
+      Sketchfab: <a href="https://sketchfab.com/tathagatamishra" target="_blank">3D Models Portfolio</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Tathagata Mishra | Designed with Synthwave Love 💾
+  </footer>
+
+</body>
+</html>

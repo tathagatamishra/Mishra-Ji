@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tathagata Mishra | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+    }
+
+    body {
+      background: linear-gradient(to top, #120025, #34084e, #00031a);
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    header, section, footer {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .grid {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 100vh;
+      background-image:
+        linear-gradient(#13f3ff30 1px, transparent 1px),
+        linear-gradient(to right, #13f3ff30 1px, transparent 1px);
+      background-size: 40px 40px;
+      transform: perspective(800px) rotateX(75deg);
+      z-index: 0;
+    }
+
+    .stars {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .star {
+      position: absolute;
+      background: #fdfdfd;
+      border-radius: 50%;
+      box-shadow: 0 0 6px #fff;
+    }
+
+    h1, h2 {
+      text-align: center;
+      text-shadow: 0 0 5px #f0f;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin: 40px 0 20px;
+    }
+
+    p, li {
+      line-height: 1.6;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 20px;
+    }
+
+    .project {
+      margin-bottom: 20px;
+    }
+
+    .project a {
+      color: #67ccd1;
+      text-decoration: none;
+    }
+
+    .project a:hover {
+      color: #fdd27d;
+    }
+
+    .socials {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .socials a {
+      font-size: 24px;
+      margin: 0 10px;
+      color: #67ccd1;
+      text-decoration: none;
+    }
+
+    .socials a:hover {
+      color: #fdd27d;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      padding-bottom: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #000;
+      border: 1px solid #fff;
+      color: #fdd27d;
+      text-decoration: none;
+      margin-top: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px #f0f;
+    }
+
+    .btn:hover {
+      background: #fdd27d;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="stars"></div>
+
+  <header>
+    <h1>Tathagata Mishra</h1>
+    <p style="text-align:center;">Creative Full Stack Web Developer | MERN | 3D | Game Dev Enthusiast</p>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <p>
+      Creative Full Stack Developer with expertise in MERN stack, 3D Web technologies, and multimedia content creation.
+      Currently exploring Unreal Engine and game development. I enjoy creating immersive and functional web apps
+      with strong backend logic and animated frontends.
+    </p>
+    <a class="btn" href="https://drive.google.com/file/d/1uu5crqTDzOiWwbaevrHqCNdRF0Zy742a/view?usp=sharing" target="_blank">Download Resume</a>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li>Frontend: JavaScript, React.js, Next.js, HTML5, CSS3, SCSS, Tailwind, Three.js, React Three Fiber</li>
+      <li>Backend: Node.js, Express, MongoDB, JWT</li>
+      <li>DevOps: AWS EC2, Route 53, Git</li>
+      <li>Other: Python, WebSockets, Blender, UE5</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <div class="project">
+      <strong>Corporate Law Firm Website</strong><br>
+      <a href="https://dmassociates.in" target="_blank">Live Site</a> |
+      <a href="https://github.com/tathagatamishra" target="_blank">GitHub</a>
+    </div>
+
+    <div class="project">
+      <strong>To-Do Application</strong><br>
+      <a href="https://what2do.vercel.app" target="_blank">Live Demo</a> |
+      <a href="https://github.com/tathagatamishra/ToDoApp" target="_blank">GitHub</a>
+    </div>
+
+    <div class="project">
+      <strong>QR Code Generator</strong><br>
+      <a href="https://quickieqr.vercel.app" target="_blank">Live Demo</a> |
+      <a href="https://github.com/tathagatamishra/QuickieQR" target="_blank">GitHub</a>
+    </div>
+
+    <div class="project">
+      <strong>Planet 3D Website</strong><br>
+      <a href="https://planet3d.vercel.app" target="_blank">Live Demo</a> |
+      <a href="https://github.com/tathagatamishra/PLANET" target="_blank">GitHub</a>
+    </div>
+
+    <div class="project">
+      <strong>Shubukan India</strong><br>
+      <a href="https://shubukanindia.org" target="_blank">Live Demo</a> |
+      <a href="https://github.com/tathagatamishra/shubukanindia" target="_blank">GitHub</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p style="text-align:center;">
+      Email: <a href="mailto:tathagatamishra007@gmail.com">tathagatamishra007@gmail.com</a><br>
+      Phone: 7602728880
+    </p>
+    <div class="socials">
+      <a href="https://github.com/tathagatamishra" class="fa fa-github" target="_blank"></a>
+      <a href="https://www.linkedin.com/in/tathagatamishra/" class="fa fa-linkedin" target="_blank"></a>
+      <a href="https://www.youtube.com/@vfxinvein" class="fa fa-youtube" target="_blank"></a>
+      <a href="https://www.instagram.com/chaoticrealm3d/" class="fa fa-instagram" target="_blank"></a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Tathagata Mishra | All rights reserved</p>
+  </footer>
+
+  <script>
+    // Star generator
+    const starsContainer = document.querySelector(".stars");
+
+    function createStar() {
+      const star = document.createElement("div");
+      const size = Math.random() * 2 + 1;
+      star.classList.add("star");
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      star.style.top = `${Math.random() * 100}vh`;
+      star.style.left = `${Math.random() * 100}vw`;
+      starsContainer.appendChild(star);
+    }
+
+    for (let i = 0; i < 300; i++) {
+      createStar();
+    }
+  </script>
+</body>
+</html>
